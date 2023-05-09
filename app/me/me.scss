@@ -1,0 +1,109 @@
+.about-container {
+  img {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 5%;
+    height: auto;
+  }
+  .about-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    .info-wrapper {
+      width: 50%;
+      h1 {
+        font-size: 48px;
+        font-weight: 400;
+        margin-bottom: 89px;
+      }
+      .social {
+        margin-top: 30px;
+      }
+      .download-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 195px;
+        height: 36px;
+        border-radius: 100px;
+        background-color: #00ff29;
+        padding: 10px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 54px;
+        cursor: pointer;
+        transition: 0.6 ease-in-out;
+        &:hover {
+          filter: brightness(0.8);
+        }
+        img {
+          width: 22px;
+          height: auto;
+          padding-right: 10px;
+          margin: 0;
+        }
+      }
+      p {
+        font-size: clamp(10px, 2vw, 16px);
+        color: #828282;
+      }
+      .linkdIn {
+        margin-top: 3%;
+      }
+    }
+    .greenEllipse {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background-color: #00ff29;
+      animation-name: ellipse;
+      animation-duration: 5s;
+      animation-timing-function: ease-out;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
+      position: absolute;
+      box-shadow: 0px 0px 0px 80px #00ff29;
+      filter: blur(45px);
+      z-index: 0;
+      left: 46%;
+      top: 0%;
+    }
+  }
+  .description-wrapper {
+    z-index: 2;
+    width: 50%;
+    p {
+      font-size: clamp(10px, 2vw, 16px);
+      color: #828282;
+      margin-bottom: 68px;
+    }
+    h3 {
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 400;
+      color: #828282;
+      border-top: 1px solid #9c9c9c;
+      padding-top: 5px;
+    }
+  }
+  .featured-wrapper {
+    margin-top: 120px;
+    h3 {
+      font-size: 24px;
+      color: #4f4f4f;
+      font-weight: 400;
+      border-bottom: 1px solid #00ff29;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+    .featured-icons {
+      gap: 1rem;
+      img {
+        width: 195px;
+        height: auto;
+      }
+    }
+  }
+}

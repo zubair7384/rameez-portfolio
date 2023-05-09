@@ -1,0 +1,62 @@
+.work-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  .info-wrapper {
+    width: 50%;
+    h1 {
+      font-size: 48px;
+      font-weight: 400;
+      margin-bottom: 89px;
+    }
+  }
+  .greenEllipse {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #00ff29;
+    animation-name: ellipse;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    position: absolute;
+    box-shadow: 0px 0px 0px 80px #00ff29;
+    filter: blur(45px);
+    z-index: 0;
+    left: 56%;
+    top: 38%;
+  }
+  .description-wrapper {
+    width: 50%;
+    z-index: 2;
+    h3 {
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 400;
+      color: #828282;
+      padding-top: 5px;
+    }
+  }
+}
+.work-cards-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  .image-box {
+    width: calc(33.33% - 10px);
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+}
