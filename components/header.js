@@ -10,7 +10,7 @@ import "./styles/header.scss";
 const Header = () => {
   const pathname = usePathname();
   return (
-    <header className="header-wrapper flex-align-center">
+    <header className="header-wrapper flex-align-center mx-auto">
       <div className="nav flex-between w-100">
         <ul className="nav-list flex ">
           <li>
@@ -45,7 +45,9 @@ const Header = () => {
           </li>
         </ul>
         <p className="nav-title">
-          RAMEEZ IQBAL <span>--</span> BOLEN
+          <Link href="/">
+            RAMEEZ IQBAL <span>--</span> BOLEN
+          </Link>
         </p>
       </div>
     </header>

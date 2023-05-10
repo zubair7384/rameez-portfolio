@@ -3,7 +3,29 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import work1 from "../../assets/png/work1.png";
+import work2 from "../../assets/png/workEmpty.png";
 import "./work.scss";
+
+const images = [
+  { link: work1, title: "ALIENS AMONGS US" },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+];
 
 const Work = () => {
   const [imageArray, setImageArray] = React.useState([]);
@@ -66,36 +88,14 @@ const Work = () => {
         </div>
       </motion.div>
       <div className="work-cards-wrapper">
-        <motion.div className="image-box" variants={item}>
-          <Image src={work1} alt="worl-card" width={400} height={272} />
-        </motion.div>
-        <motion.div className="image-box" variants={item}>
-          <Image src={work1} alt="worl-card" width={400} height={272} />
-        </motion.div>
-        <motion.div className="image-box" variants={item}>
-          <Image src={work1} alt="worl-card" width={400} height={272} />
-        </motion.div>
-        <motion.div className="image-box" variants={item}>
-          <Image src={work1} alt="worl-card" width={400} height={272} />
-        </motion.div>
-        <motion.div className="image-box" variants={item}>
-          <Image src={work1} alt="worl-card" width={400} height={272} />
-        </motion.div>
-        <motion.div className="image-box" variants={item}>
-          <Image src={work1} alt="worl-card" width={400} height={272} />
-        </motion.div>
-        <motion.div className="image-box" variants={item}>
-          <Image src={work1} alt="worl-card" width={400} height={272} />
-        </motion.div>
-        <motion.div className="image-box" variants={item}>
-          <Image src={work1} alt="worl-card" width={400} height={272} />
-        </motion.div>
-        <motion.div className="image-box" variants={item}>
-          <Image src={work1} alt="worl-card" width={400} height={272} />
-        </motion.div>
-        <motion.div className="image-box" variants={item}>
-          <Image src={work1} alt="worl-card" width={400} height={272} />
-        </motion.div>
+        {images.map((i, index) => (
+          <motion.div key={index} className="image-box" variants={item}>
+            <Image src={i.link} alt="worl-card" width={400} height={272} />
+            <div class="image-box-text">
+              <div class="card-text">{i.title}</div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </motion.div>
   );

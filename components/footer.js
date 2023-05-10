@@ -5,7 +5,7 @@ import "./styles/footer.scss";
 const Footer = () => {
   return (
     <div className="footer-wrapper">
-      <Marquee className="marquee">
+      <Marquee className="marquee" speed={150}>
         Art direction . Graphic design . UI UX . Photography . Motion design .
         Video production
       </Marquee>

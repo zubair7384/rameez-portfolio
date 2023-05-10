@@ -1,4 +1,5 @@
 .header-wrapper {
+  width: 80%;
   height: 123px;
   .nav {
     .nav-list {
@@ -9,26 +10,40 @@
       li {
         font-size: 16px;
         font-size: clamp(12px, 2vw, 16px);
-        transition: transform 0.2s ease-out;
-        &:hover {
-          transform: scale(1.2);
-          // text-decoration: underline;
-          // text-decoration-color: #00ff29;
-        }
+        transition: transform 0.3s ease-out;
+
         .nav-link {
           list-style-type: none;
           color: #828282;
           text-decoration: none;
+          &:hover {
+            filter: brightness(0.5);
+          }
         }
         .active-link {
           color: #000;
           font-weight: 600;
         }
       }
+      li:first-child {
+        .nav-link {
+          &:hover {
+            filter: brightness(1);
+          }
+        }
+      }
     }
     .nav-title {
       font-size: clamp(10px, 2vw, 16px);
       color: #828282;
+      a {
+        list-style-type: none;
+        color: #828282;
+        text-decoration: none;
+      }
+      &:hover {
+        filter: brightness(0.5);
+      }
       span {
         letter-spacing: -2px;
       }

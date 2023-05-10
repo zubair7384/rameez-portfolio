@@ -1,17 +1,28 @@
 "use client";
-import MainBanner from "@/components/mainBanner";
-import AlienAmongsUs from "@/components/alienAmongsUs";
+import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import TwoCards from "@/components/twoCards";
-import OneCard from "@/components/oneCard";
-import A1 from "../assets/png/two1.png";
-import A2 from "../assets/png/two2.png";
-import A3 from "../assets/png/two3.png";
-import A4 from "../assets/png/two4.png";
-import A5 from "../assets/png/one1.png";
-import A6 from "../assets/png/a5.png";
+import CircleText from "@/components/circleText";
+import Marquee from "react-fast-marquee";
+import work1 from "../assets/png/work1.png";
+import work2 from "../assets/png/workEmpty.png";
+import "./home.scss";
 
-export default function Home() {
+const images = [
+  { link: work1, title: "ALIENS AMONGS US" },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+  { link: work2, title: "COMING SOON.." },
+];
+
+const Work = () => {
+  const [imageArray, setImageArray] = React.useState([]);
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -22,16 +33,68 @@ export default function Home() {
     },
   };
 
-  const mainImage =
-    "https://ik.imagekit.io/knip8ym3dh/AliensAmongUs/alien-main-banner.png?tr=w-1714,h-800,fo-auto";
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
+
+  React.useEffect(() => {
+    for (let i = 1; i <= 18; i++) {
+      let imagePath = `${i}`;
+      imageArray.push(imagePath);
+    }
+    setImageArray(imageArray, "imageArray");
+  }, []);
+
   return (
-    <motion.div variants={container} initial="hidden" animate="show">
-      <MainBanner image={mainImage} />
-      <AlienAmongsUs />
-      <TwoCards A1={A1} A2={A2} />
-      <OneCard oneImage={A5} />
-      <TwoCards A1={A3} A2={A4} />
-      <OneCard oneImage={A6} />
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="home-container"
+    >
+      {/* <CircleText /> */}
+      <motion.div
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: -10, opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="home-wrapper mx-auto"
+      >
+        <motion.div
+          initial={{ x: -1000 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 2 }}
+          className="greenEllipse"
+        ></motion.div>
+
+        <div className="description-wrapper">
+          <h3>
+            Creative Art Director with record of delivering on-target conceptual
+            marketing ideas and artwork that generate strong response.
+          </h3>
+        </div>
+      </motion.div>
+      <Marquee
+        className="home-marquee"
+        speed={150}
+        // gradient={true}
+      >
+        Art direction . Graphic design . UI UX . Photography . Motion design .
+        Video production
+      </Marquee>
+      <div className="home-cards-wrapper mx-auto">
+        {images.map((i, index) => (
+          <motion.div key={index} className="image-box" variants={item}>
+            <Image src={i.link} alt="worl-card" width={400} height={272} />
+            <div class="image-box-text">
+              <div class="card-text">{i.title}</div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </motion.div>
   );
-}
+};
+
+export default Work;

@@ -1,0 +1,56 @@
+.circle {
+  position: relative;
+  width: 211px;
+  height: 211px;
+  border-radius: 50%;
+  // background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .center-text {
+    color: #1fff28;
+    z-index: 3;
+    font-size: 32px;
+  }
+}
+
+.center {
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.text-container {
+  position: absolute;
+  width: 102%;
+  height: 102%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #000;
+  border-radius: 50%;
+}
+
+.text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: rotate 10s linear infinite;
+  @keyframes rotate {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  span {
+    color: #1fff28;
+    position: absolute;
+    left: 50%;
+    font-size: 16px;
+    transform-origin: 0 106px;
+    top: 0;
+  }
+}
