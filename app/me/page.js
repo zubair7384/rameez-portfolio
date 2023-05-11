@@ -22,63 +22,70 @@ const Me = () => {
   };
 
   return (
-    <motion.div
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="about-container"
-    >
-      <Image src={meBanner} alt="" width={1240} height={600} />
-      <div className="about-wrapper">
-        <motion.div
-          initial={{ x: -1000 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 1 }}
-          className="greenEllipse"
-        ></motion.div>
-        <div className="info-wrapper">
-          <h1>
-            ABOUT
-            <br />
-            ME
-          </h1>
-          <p>info@rameeziqbal.com</p>
-          <p>+971 55 335 2875</p>
-          <p className="linkdIn">LinkedIn</p>
-          <p className="insta">Instagram</p>
-          <div className="download-btn">
-            <Image src={down} alt="" />
-            DOWNLOAD RESUME
+    <>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="about-container"
+      >
+        <Image src={meBanner} alt="" width={1240} height={600} />
+        <div className="about-wrapper">
+          <motion.div
+            initial={{ y: -1000 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 2 }}
+            className="greenEllipse"
+          ></motion.div>
+          <div className="info-wrapper">
+            <h1>
+              ABOUT
+              <br />
+              ME
+            </h1>
+            <p>info@rameeziqbal.com</p>
+            <p>+971 55 335 2875</p>
+            <p className="linkdIn">LinkedIn</p>
+            <p className="insta">Instagram</p>
+            <div className="download-btn">
+              <Image src={down} alt="" />
+              DOWNLOAD RESUME
+            </div>
+          </div>
+          <div className="description-wrapper">
+            <p>
+              As a seasoned Art Director and Senior Interactive Designer with
+              over 8 years of experience, I specialize in communication, design,
+              and digital media to achieve marketing goals. With expertise in
+              delivering effective UI/UX/IxD, responsive design, creative
+              strategy, execution of visuals, corporate graphics, project
+              management, and print materials, I bring a unique perspective to
+              every project I work on, particularly in the entertainment and
+              interactive media industries.
+            </p>
+            <h3>
+              Trained In Adobe Indesign, Adobe Illustrator, Adobe Photoshop,
+              Adobe Premier Pro, Adobe After Effects, Adobe XD, Adobe Dimension,
+              Adobe Dreamweaver, Adobe Lightroom, Capture One Pro, Final Cut
+              Pro, Divinchi Resolve, Invision, Sketch, and Figma.
+            </h3>
           </div>
         </div>
-        <div className="description-wrapper">
-          <p>
-            As a seasoned Art Director and Senior Interactive Designer with over
-            8 years of experience, I specialize in communication, design, and
-            digital media to achieve marketing goals. With expertise in
-            delivering effective UI/UX/IxD, responsive design, creative
-            strategy, execution of visuals, corporate graphics, project
-            management, and print materials, I bring a unique perspective to
-            every project I work on, particularly in the entertainment and
-            interactive media industries.
-          </p>
-          <h3>
-            Trained In Adobe Indesign, Adobe Illustrator, Adobe Photoshop, Adobe
-            Premier Pro, Adobe After Effects, Adobe XD, Adobe Dimension, Adobe
-            Dreamweaver, Adobe Lightroom, Capture One Pro, Final Cut Pro,
-            Divinchi Resolve, Invision, Sketch, and Figma.
-          </h3>
+        <div className="featured-wrapper">
+          <h3>Featured in</h3>
+          <div className="featured-icons flex">
+            <Image src={designBoom} alt="design-boom" width={195} height={39} />
+            <Image
+              src={ferhrenHeit}
+              alt="ferhrenheit"
+              width={195}
+              height={39}
+            />
+            <Image src={behance} alt="ferhrenheit" width={195} height={39} />
+          </div>
         </div>
-      </div>
-      <div className="featured-wrapper">
-        <h3>Featured in</h3>
-        <div className="featured-icons flex">
-          <Image src={designBoom} alt="design-boom" width={195} height={39} />
-          <Image src={ferhrenHeit} alt="ferhrenheit" width={195} height={39} />
-          <Image src={behance} alt="ferhrenheit" width={195} height={39} />
-        </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 .work-container {
+  position: relative;
   width: 80%;
   margin: 0 auto;
   .work-wrapper {
@@ -52,39 +53,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
-  .image-box {
+  .card-wrapper {
     width: calc(33.33% - 10px);
     position: relative;
-    .image-box-text {
-      transition: 0.5s ease;
-      opacity: 0;
-      position: absolute;
-      bottom: -2%;
-      left: 23%;
-      transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      text-align: center;
-      .card-text {
-        color: white;
-        font-size: 16px;
-        padding: 16px 32px;
-      }
-    }
-    &:hover {
-      img {
-        filter: brightness(0.7);
-      }
-      .image-box-text {
-        opacity: 1;
-      }
-    }
-    img {
-      width: 100%;
-      height: auto;
-      margin-bottom: 15px;
-    }
-    @media (max-width: 767px) {
-      width: 100%;
-    }
+    cursor: pointer;
   }
 }

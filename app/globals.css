@@ -50,3 +50,6 @@ p {
 .w-100 {
   width: 100%;
 }
+.nextjs-toast-errors-parent {
+  display: none;
+}
