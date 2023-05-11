@@ -4,16 +4,16 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import CircleText from "@/components/circleText";
-import NextCard from "@/components/NextCard";
+import NextCard from "@/components/nextCard";
 import { usePathname } from "next/navigation";
-import {
-  Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
+// import {
+//   Button,
+//   Element,
+//   Events,
+//   animateScroll as scroll,
+//   scrollSpy,
+//   scroller,
+// } from "react-scroll";
 import Marquee from "react-fast-marquee";
 import work1 from "../assets/png/work1.png";
 import work2 from "../assets/png/workEmpty.png";
@@ -51,11 +51,11 @@ const Work = () => {
   };
 
   function handleScroll() {
-    scrollSpy.scrollSpy({
-      duration: 10000,
-      delay: 50,
-      smooth: "easeInOutQuart",
-    });
+    // scrollSpy.scrollSpy({
+    //   duration: 10000,
+    //   delay: 50,
+    //   smooth: "easeInOutQuart",
+    // });
   }
 
   React.useEffect(() => {
