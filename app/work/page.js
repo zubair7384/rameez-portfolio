@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import NextCard from "@/components/NextCard";
+import NextCard from "@/components/nextCard";
 import CircleText from "@/components/circleText";
 import work1 from "../../assets/png/work1.png";
 import work2 from "../../assets/png/workEmpty.png";
