@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import NextCard from "@/components/nextCard";
 import CircleText from "@/components/circleText";
@@ -94,9 +95,11 @@ const Work = () => {
         </motion.div>
         <div className="work-cards-wrapper">
           {images.map((i, index) => (
-            <motion.div key={index} className="card-wrapper" variants={item}>
-              <NextCard link={i.link} title={i.title} />
-            </motion.div>
+            <Link className="card-wrapper" href="/aliensAmoungUs">
+              <motion.div key={index} variants={item}>
+                <NextCard link={i.link} title={i.title} />
+              </motion.div>
+            </Link>
           ))}
         </div>
       </motion.div>

@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ReactCurvedText from "react-curved-text";
 import "./styles/circle.scss";
 
 const CircleText = (props) => {
@@ -29,21 +30,24 @@ const CircleText = (props) => {
               : "text-container bg-green"
           }
         >
-          <div ref={textRef} className="text">
-            {"RAMEEZ IQBAL BOLEN .RAMEEZ IQBAL BOLEN ."
-              .split("")
-              .map((letter, index) => (
-                <span
-                  style={{
-                    transform: `rotate(${index * 9}deg)`,
-                    color: props.varient === "black" ? "#1fff28" : "#000",
-                  }}
-                  key={index}
-                >
-                  {letter}
-                </span>
-              ))}
-          </div>
+          <ReactCurvedText
+            width={300}
+            height={300}
+            cx={150}
+            cy={150}
+            rx={87}
+            ry={87}
+            startOffset={0}
+            reversed={true}
+            text="RAMEEZ IQBAL BOLEN . RAMEEZ IQBAL BOLEN . RAMEEZ IQBAL BOLEN . "
+            textProps={{ style: { fontSize: 16 } }}
+            textPathProps={{
+              fill: props.varient === "black" ? "#1fff28" : "#000",
+            }}
+            tspanProps={null}
+            ellipseProps={null}
+            svgProps={null}
+          />
         </div>
       </div>
     </Link>
