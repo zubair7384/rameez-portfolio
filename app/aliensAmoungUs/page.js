@@ -1,9 +1,10 @@
 "use client";
-import MainBanner from "@/components/mainBanner";
+// import MainBanner from "@/components/mainBanner";
 import AlienAmongsUs from "@/components/alienAmongsUs";
 import { motion } from "framer-motion";
 import TwoCards from "@/components/twoCards";
 import OneCard from "@/components/oneCard";
+import ReactPlayer from "react-player";
 import CircleText from "@/components/circleText";
 import A1 from "../../assets/png/two1.png";
 import A2 from "../../assets/png/two2.png";
@@ -35,7 +36,20 @@ export default function AliensAmoungUs() {
         animate="show"
       >
         <CircleText right={7} bottom={-3} varient="green" />
-        <MainBanner image={mainImage} />
+        {/* <MainBanner image={mainImage} /> */}
+        <div className="player-wrapper">
+          <ReactPlayer
+            url="/videos/alien-banner.mp4"
+            playing={true}
+            loop={true}
+            controls={false}
+            playbackRate={1}
+            width="100%"
+            height="600px"
+            className="react-player"
+          />
+        </div>
+
         <AlienAmongsUs />
         <TwoCards A1={A1} A2={A2} />
         <OneCard oneImage={A5} />

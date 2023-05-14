@@ -2,4 +2,15 @@
   width: 80%;
   margin: 0 auto;
   position: relative;
+  .player-wrapper {
+    .react-player {
+      height: auto !important;
+      border-radius: 8px;
+      video {
+        border-radius: 8px;
+        width: 100%;
+        height: auto !important;
+      }
+    }
+  }
 }

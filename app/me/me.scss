@@ -2,7 +2,7 @@
   position: relative;
   width: 80%;
   margin: 0 auto;
-  img {
+  .me-banner {
     max-width: 100%;
     width: 100%;
     margin-bottom: 5%;
@@ -86,7 +86,7 @@
     h3 {
       font-size: clamp(18px, 2vw, 24px);
       font-weight: 400;
-      color: #828282;
+      color: #4f4f4f;
       border-top: 1px solid #9c9c9c;
       padding-top: 5px;
     }
@@ -102,10 +102,17 @@
       margin-bottom: 20px;
     }
     .featured-icons {
-      gap: 1rem;
-      img {
-        width: 195px;
+      gap: 2rem;
+      align-items: center;
+      .image-box {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        width: fit-content;
         height: auto;
+        img {
+          height: auto;
+        }
       }
     }
   }

@@ -7,6 +7,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 6%;
     .info-wrapper {
       width: 50%;
       h1 {
@@ -37,11 +38,12 @@
       width: 50%;
       z-index: 2;
       h3 {
-        font-size: clamp(18px, 2vw, 24px);
+        font-size: clamp(18px, 2vw, 36px);
+        line-height: 43px;
         font-weight: 400;
-        color: #828282;
+        color: #4f4f4f;
         padding-top: 5px;
-        padding-left: 12%;
+        padding-left: 2%;
       }
     }
   }
