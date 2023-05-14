@@ -23,13 +23,13 @@
       position: absolute;
       box-shadow: 0px 0px 0px 109px #00ff29;
       filter: blur(35px);
-      z-index: 0;
+      z-index: 3;
       left: 64%;
-      top: 40%;
+      top: 0;
     }
     .description-wrapper {
       width: 50%;
-      z-index: 2;
+      z-index: 4;
       h3 {
         font-size: clamp(18px, 2vw, 36px);
         line-height: 43px;
@@ -60,4 +60,5 @@
   font-size: 200px;
   margin: 2.5% 0;
   text-transform: uppercase;
+  background-color: #fff;
 }

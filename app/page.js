@@ -86,8 +86,8 @@ const Work = () => {
           className="home-wrapper mx-auto"
         >
           <motion.div
-            initial={{ x: -1000 }}
-            animate={{ x: 0 }}
+            initial={{ y: -600 }}
+            animate={{ y: 0 }}
             transition={{ duration: 2 }}
             className="greenEllipse"
           ></motion.div>
