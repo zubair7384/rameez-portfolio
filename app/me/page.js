@@ -4,9 +4,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import down from "../../assets/svg/down.svg";
 import meBanner from "../../assets/png/meImage.png";
-import ferhrenHeit from "../../assets/png/fh.png";
-import designBoom from "../../assets/png/db.png";
-import behance from "../../assets/png/behance.png";
+import ferhrenHeit from "../../assets/svg/fa.svg";
+import designBoom from "../../assets/svg/de.svg";
+import behance from "../../assets/svg/be.svg";
+import surface from "../../assets/svg/su.svg";
+import pulse from "../../assets/svg/pu.svg";
 
 import "./me.scss";
 
@@ -29,7 +31,13 @@ const Me = () => {
         animate="show"
         className="about-container"
       >
-        <Image src={meBanner} alt="" width={1240} height={600} />
+        <Image
+          className="me-banner"
+          src={meBanner}
+          alt=""
+          width={1240}
+          height={600}
+        />
         <div className="about-wrapper">
           <motion.div
             initial={{ y: -1000 }}
@@ -74,14 +82,11 @@ const Me = () => {
         <div className="featured-wrapper">
           <h3>Featured in</h3>
           <div className="featured-icons flex">
-            <Image src={designBoom} alt="design-boom" width={195} height={39} />
-            <Image
-              src={ferhrenHeit}
-              alt="ferhrenheit"
-              width={195}
-              height={39}
-            />
-            <Image src={behance} alt="ferhrenheit" width={195} height={39} />
+            <Image src={designBoom} alt="design-boom" width={210} />
+            <Image src={ferhrenHeit} alt="ferhrenheit" width={190} />
+            <Image src={surface} alt="ferhrenheit" width={159} />
+            <Image src={pulse} alt="ferhrenheit" width={135} />
+            <Image src={behance} alt="ferhrenheit" width={135} />
           </div>
         </div>
       </motion.div>

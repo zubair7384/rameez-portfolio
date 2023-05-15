@@ -83,7 +83,7 @@ const Work = () => {
         ref={scrollRef}
       >
         {/* <h1 onClick={handleScroll}>new</h1> */}
-        <CircleText right={15} bottom={-10} varient="black" data-scroll />
+        <CircleText right={15} bottom={-9} varient="black" data-scroll />
         <motion.div
           initial={{ y: 10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -92,8 +92,8 @@ const Work = () => {
           className="home-wrapper mx-auto"
         >
           <motion.div
-            initial={{ x: -1000 }}
-            animate={{ x: 0 }}
+            initial={{ y: -600 }}
+            animate={{ y: 0 }}
             transition={{ duration: 2 }}
             className="greenEllipse"
           ></motion.div>

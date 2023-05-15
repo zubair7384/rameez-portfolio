@@ -16,7 +16,7 @@ const CircleText = (props) => {
     >
       <motion.div
         className="circle"
-        whileHover={{ scale: 1.1 }}
+        // whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
       >
         <div
