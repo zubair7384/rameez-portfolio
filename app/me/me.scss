@@ -104,15 +104,19 @@
     .featured-icons {
       gap: 2rem;
       align-items: center;
+      a {
+        cursor: pointer;
+        filter: contrast(0.7);
+      }
       .image-box {
         display: flex;
         align-items: center;
         justify-content: start;
         width: fit-content;
         height: auto;
-        img {
-          height: auto;
-        }
+          img {
+            height: auto;
+          }
       }
     }
   }

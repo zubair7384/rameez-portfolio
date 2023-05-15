@@ -46,10 +46,18 @@ const AlienAmongsUs = () => {
         <div className="featured-wrapper">
           <h3>Featured in</h3>
           <div className="featured-icons flex">
-            <Image src={designBoom} alt="design-boom" width={160} />
-            <Image src={ferhrenHeit} alt="ferhrenheit" width={140} />
-            <Image src={surface} alt="ferhrenheit" width={130} />
-            <Image src={pulse} alt="ferhrenheit" width={110} />
+            <a>
+              <Image src={designBoom} alt="design-boom" width={160} />
+            </a>
+            <a>
+              <Image src={ferhrenHeit} alt="ferhrenheit" width={140} />
+            </a>
+            <a>
+              <Image src={surface} alt="ferhrenheit" width={130} />
+            </a>
+            <a>
+              <Image src={pulse} alt="ferhrenheit" width={110} />
+            </a>
           </div>
         </div>
       </div>

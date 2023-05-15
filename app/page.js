@@ -25,7 +25,7 @@ const images = [
   { link: work2, title: "COMING SOON.." },
 ];
 
-const Work = () => {
+const Home = () => {
   const [imageArray, setImageArray] = React.useState([]);
   const pathname = usePathname();
   const scrollRef = React.createRef();
@@ -131,4 +131,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Home;

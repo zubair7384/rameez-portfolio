@@ -31,6 +31,10 @@
       gap: 2rem;
       align-items: center;
       flex-wrap: wrap;
+      a {
+        filter: contrast(0.8);
+        cursor: pointer;
+      }
     }
   }
   .greenEllipse {
