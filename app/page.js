@@ -6,15 +6,9 @@ import Link from "next/link";
 import CircleText from "@/components/circleText";
 import NextCard from "@/components/nextCard";
 import { usePathname } from "next/navigation";
-// import {
-//   Button,
-//   Element,
-//   Events,
-//   animateScroll as scroll,
-//   scrollSpy,
-//   scroller,
-// } from "react-scroll";
 import Marquee from "react-fast-marquee";
+import { Events, animateScroll as scroll } from "react-scroll";
+
 import work1 from "../assets/png/work1.png";
 import work2 from "../assets/png/workEmpty.png";
 import "./home.scss";
@@ -34,6 +28,7 @@ const images = [
 const Work = () => {
   const [imageArray, setImageArray] = React.useState([]);
   const pathname = usePathname();
+  const scrollRef = React.createRef();
 
   const container = {
     hidden: { opacity: 0 },
@@ -50,34 +45,45 @@ const Work = () => {
     show: { opacity: 1, y: 0 },
   };
 
-  function handleScroll() {
-    // scrollSpy.scrollSpy({
-    //   duration: 10000,
-    //   delay: 50,
-    //   smooth: "easeInOutQuart",
-    // });
-  }
-
   React.useEffect(() => {
     for (let i = 1; i <= 18; i++) {
       let imagePath = `${i}`;
       imageArray.push(imagePath);
     }
-    // handleScroll();
-    setImageArray(imageArray, "imageArray");
+    setImageArray(imageArray);
   }, []);
 
+  React.useEffect(() => {
+    Events.scrollEvent.register("begin", function () {});
+    Events.scrollEvent.register("end", function () {});
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    scroll.scrollTo(window.scrollY, {
+      duration: 2000,
+      delay: 20,
+      smooth: "easeInOutQuart",
+    });
+  };
+
   return (
-    <>
+    <div>
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
         className="home-container"
-        onScroll={handleScroll}
+        ref={scrollRef}
       >
         {/* <h1 onClick={handleScroll}>new</h1> */}
-        <CircleText right={15} bottom={-10} varient="black" />
+        <CircleText right={15} bottom={-10} varient="black" data-scroll />
         <motion.div
           initial={{ y: 10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -103,6 +109,9 @@ const Work = () => {
         <Marquee
           className="home-marquee"
           speed={150}
+          data-scroll
+          data-scroll-speed="-20"
+          data-scroll-position="top"
           // gradient={true}
         >
           Art direction . Graphic design . UI UX . Photography . Motion design .
@@ -118,7 +127,7 @@ const Work = () => {
           ))}
         </div>
       </motion.div>
-    </>
+    </div>
   );
 };
 

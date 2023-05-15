@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 import ReactCurvedText from "react-curved-text";
 import "./styles/circle.scss";
 
@@ -13,7 +14,11 @@ const CircleText = (props) => {
       style={{ right: `${props.right}%`, bottom: `${props.bottom}%` }}
       id="circle-container"
     >
-      <div className="circle">
+      <motion.div
+        className="circle"
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      >
         <div
           className="center-text"
           style={{
@@ -49,7 +54,7 @@ const CircleText = (props) => {
             svgProps={null}
           />
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 };

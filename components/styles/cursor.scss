@@ -1,0 +1,31 @@
+:root {
+    --color-cursor: 220, 90, 90;
+    --cursor-outline-shade: 0.3;
+    --cursor-size: 20px;
+    --cursor-outline-size: 30px;
+  }
+
+#cursor-dot,
+#cursor-dot-outline {
+    position: absolute;
+  z-index: 100000;
+  pointer-events: none;
+  will-change: transform;
+  mix-blend-mode: difference;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+#cursor-dot {
+  display: none;
+}
+
+#cursor-dot-outline {
+  width: 32px;
+  height: 32px;
+  background-color: #1fff28;
+}

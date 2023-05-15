@@ -6,8 +6,8 @@ body {
   font-family: "Figtree", sans-serif !important;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
-
 h1,
 h2,
 h3,
@@ -52,4 +52,20 @@ p {
 }
 .nextjs-toast-errors-parent {
   display: none;
+}
+.cursor {
+  position: absolute;
+  z-index: 999999;
+  pointer-events: none;
+  will-change: transform;
+  mix-blend-mode: difference;
+}
+.cursor .big {
+  width: 2.2222222222rem;
+  height: 2.2222222222rem;
+  margin-top: -50%;
+  margin-left: -50%;
+  border-radius: 50%;
+  transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  background-color: #00ff29;
 }
