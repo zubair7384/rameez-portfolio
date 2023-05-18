@@ -10,10 +10,10 @@ import { Events, animateScroll as scroll } from "react-scroll";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Rameez Iqbal rodtfolio",
-  description: "Rameez Iqbal portfolio description",
-};
+// export const metadata = {
+//   title: "Rameez Iqbal portfolio",
+//   description: "Rameez Iqbal portfolio description",
+// };
 
 export default function RootLayout({ children }) {
   React.useEffect(() => {
