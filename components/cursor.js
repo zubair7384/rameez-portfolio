@@ -8,8 +8,12 @@ const Cursor = () => {
   const requestRef = useRef();
   const previousTimeRef = useRef();
   let [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
+  const [width, setWidth] = useState(
+    typeof window !== "undefined" && window.innerWidth
+  );
+  const [height, setHeight] = useState(
+    typeof window !== "undefined" && window.innerHeight
+  );
   let cursorVisible = useState(false);
   let cursorEnlarged = useState(false);
 
@@ -38,33 +42,36 @@ const Cursor = () => {
     toggleCursorSize();
   };
   const onResize = (event) => {
-    setWidth(window.innerWidth);
-    setHeight(window.innerHeight);
+    setWidth(typeof window !== "undefined" && window.innerWidth);
+    setHeight(typeof window !== "undefined" && window.innerHeight);
   };
 
   /**
    * Hooks
    */
   useEffect(() => {
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseenter", onMouseEnter);
-    document.addEventListener("mouseleave", onMouseLeave);
-    document.addEventListener("mousedown", onMouseDown);
-    document.addEventListener("mouseup", onMouseUp);
-    window.addEventListener("resize", onResize);
-    requestRef.current = requestAnimationFrame(animateDotOutline);
+    // Check if window object is defined (client-side)
+    if (typeof window !== "undefined") {
+      document.addEventListener("mousemove", onMouseMove);
+      document.addEventListener("mouseenter", onMouseEnter);
+      document.addEventListener("mouseleave", onMouseLeave);
+      document.addEventListener("mousedown", onMouseDown);
+      document.addEventListener("mouseup", onMouseUp);
+      window.addEventListener("resize", onResize);
+      requestRef.current = requestAnimationFrame(animateDotOutline);
 
-    handleLinks();
+      handleLinks();
 
-    return () => {
-      document.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("mouseenter", onMouseEnter);
-      document.removeEventListener("mouseleave", onMouseLeave);
-      document.removeEventListener("mousedown", onMouseDown);
-      document.removeEventListener("mouseup", onMouseUp);
-      window.removeEventListener("resize", onResize);
-      cancelAnimationFrame(requestRef.current);
-    };
+      return () => {
+        document.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("mouseenter", onMouseEnter);
+        document.removeEventListener("mouseleave", onMouseLeave);
+        document.removeEventListener("mousedown", onMouseDown);
+        document.removeEventListener("mouseup", onMouseUp);
+        window.removeEventListener("resize", onResize);
+        cancelAnimationFrame(requestRef.current);
+      };
+    }
   }, []);
 
   let { x, y } = mousePosition;
