@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
 import down from "../../assets/svg/down.svg";
 import meBanner from "../../assets/png/meImage.png";
@@ -79,27 +80,21 @@ const Me = () => {
             </h3>
           </div>
         </div>
-        <div className="featured-wrapper">
-          <h3>Featured in</h3>
-          <div className="featured-icons flex">
-            <a>
-              <Image src={designBoom} alt="design-boom" width={210} />
-            </a>
-            <a>
-              <Image src={ferhrenHeit} alt="ferhrenheit" width={190} />
-            </a>
-            <a>
-              <Image src={surface} alt="ferhrenheit" width={159} />
-            </a>
-            <a>
-              <Image src={pulse} alt="ferhrenheit" width={135} />
-            </a>
-            <a>
-              <Image src={behance} alt="ferhrenheit" width={135} />
-            </a>
-          </div>
-        </div>
       </motion.div>
+        <div className="featured-wrapper">
+          <Marquee className="marquee" speed={100} direction="right">
+              <Image src={designBoom} alt="design-boom"  />
+              <Image src={ferhrenHeit} alt="ferhrenheit"  />
+              <Image src={surface} alt="ferhrenheit" />
+              <Image src={pulse} alt="ferhrenheit"  />
+              <Image src={behance} alt="ferhrenheit"  />
+              <Image src={designBoom} alt="design-boom"  />
+              <Image src={ferhrenHeit} alt="ferhrenheit"  />
+              <Image src={surface} alt="ferhrenheit" />
+              <Image src={pulse} alt="ferhrenheit"  />
+              <Image src={behance} alt="ferhrenheit"  />
+          </Marquee>
+          </div>
     </>
   );
 };

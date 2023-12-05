@@ -28,7 +28,8 @@ const Header = () => {
               className={
                 pathname === "/work" ? "nav-link active-link" : "nav-link link"
               }
-              href="/work"
+              href="https://aliensamongus.rameeziqbal.com/"
+              alt="_blank"
             >
               WORK
             </Link>
