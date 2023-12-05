@@ -93,6 +93,7 @@ const Me = () => {
               <Image src={surface} alt="ferhrenheit" />
               <Image src={pulse} alt="ferhrenheit"  />
               <Image src={behance} alt="ferhrenheit"  />
+              <Image src={surface} alt="design-boom"  />
           </Marquee>
           </div>
     </>
